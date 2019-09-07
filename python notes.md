@@ -73,3 +73,20 @@ zip()函数使用若干个可迭代对象作为参数，将对象中对应的元
 ## LEGB规则
 
 python寻找变量的路径：local 、enclosed、global、buildin，依次是局部、闭包（嵌套）、全局、内置函数。
+
+
+## python的真和假
+要注意的是，python中的负数也是True,解释器认为的是假的元素有如下这些：0，None，False，以及空数据类型比如空列表，空字典等。
+
+## python中的高级函数
+map，filter，reduce等，举个例子：
+map(lambda x: 2*x,[1,2,3,4,5]) ,返回的是[2,4,6,8,10].
+
+
+##sort 和sorted
+sort是list的一种方法，就地对列表进行排序，而sorted是所有可迭代对象的方法，原来对象不变，开辟新内存进行排序。而sort和sorted底层全部是归并排序，是稳定的排序。
+
+
+##GIL
+Cpython解释器中有一个叫GIL的东西，确保每一个进程中同一时刻内只有一个线程拥有解释器，因此python并没有具备真正意义上的多线程。
+ref https://www.cnblogs.com/SuKiWX/p/8804974.html
